@@ -1,8 +1,14 @@
 const config = require('config')
-const db = require('redis').createClient(config.dbConfig)
+const redis = require('redis')
+const Web3 = require('web3')
 const nodeModel = require('./lib/node')
 
-let node = new nodeModel(db)
+let db = redis.createClient(config.dbConfig)
+
+let web3 = new Web3()
+web3.setProvider(new web3.providers.HttpProvider(config.web3Config))
+
+let node = new nodeModel({db: db, web3: web3})
 
 let gracefulShutdown = function() {
   console.log('Received kill signal, shutting down gracefully.');
