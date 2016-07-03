@@ -1,0 +1,23 @@
+{
+  "name": "carbonvote",
+  "version": "0.0.1",
+  "description": "CarbonVote is a voting tool for Ethereum community.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/consenlabs/carbonvote.git"
+  },
+  "keywords": [
+    "ethereum",
+    "voting"
+  ],
+  "author": "Daniel Lv <lgn21st@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/consenlabs/carbonvote/issues"
+  },
+  "homepage": "https://github.com/consenlabs/carbonvote#readme"
+}
