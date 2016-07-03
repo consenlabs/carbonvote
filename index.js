@@ -1,27 +1,33 @@
 const config = require('config')
 const bluebird = require('bluebird')
-const redis = bluebird.promisifyAll(require("redis"))
+const redis = bluebird.promisifyAll(require("redis")).createClient(config.dbConfig)
 const Web3 = require('web3')
-const nodeModel = require('./lib/node')
+const Node = require('./lib/node')
 
-let db = redis.createClient(config.dbConfig)
-db.on("error", function (err) {
-  console.log("Redis Error " + err)
-});
+// initialize redis connection
+redis.on("connect", function() {
+  console.log("Redis connected.")
+})
+redis.on("error", function(err) {
+  console.log("Redis Error ", err)
+})
 
+// initialize web3 component
 let web3 = new Web3()
 web3.setProvider(new web3.providers.HttpProvider(config.web3Config))
 
-let node = new nodeModel({db: db, web3: web3, config: config})
+// bootstrap node
+let node = new Node(Object.assign({redis: redis, web3: web3}, config))
 
+// Graceful shotdown application
 let gracefulShutdown = function() {
-  console.log('Received kill signal, shutting down gracefully.');
+  console.log('Received kill signal, shutting down gracefully.')
 
-  node.stop();
+  node.stop()
 
   setTimeout(function(){
-    process.exit(0);
-  }, 1000);
+    process.exit(0)
+  }, 1500)
 }
 
 // listen for TERM signal .e.g. kill
@@ -32,10 +38,8 @@ process.on('SIGINT', gracefulShutdown)
 
 // listen for shutdown signal from pm2
 process.on('message', function(msg) {
-  if (msg == 'shutdown')
-    gracefulShutdown();
-});
-
-module.exports = node;
-
+  if (msg == 'shutdown') {
+    gracefulShutdown()
+  }
+})
 
