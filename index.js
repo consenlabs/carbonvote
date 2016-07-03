@@ -1,14 +1,18 @@
 const config = require('config')
-const redis = require('redis')
+const bluebird = require('bluebird')
+const redis = bluebird.promisifyAll(require("redis"))
 const Web3 = require('web3')
 const nodeModel = require('./lib/node')
 
 let db = redis.createClient(config.dbConfig)
+db.on("error", function (err) {
+  console.log("Redis Error " + err)
+});
 
 let web3 = new Web3()
 web3.setProvider(new web3.providers.HttpProvider(config.web3Config))
 
-let node = new nodeModel({db: db, web3: web3})
+let node = new nodeModel({db: db, web3: web3, config: config})
 
 let gracefulShutdown = function() {
   console.log('Received kill signal, shutting down gracefully.');
@@ -33,3 +37,5 @@ process.on('message', function(msg) {
 });
 
 module.exports = node;
+
+

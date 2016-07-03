@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/consenlabs/carbonvote#readme",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "config": "^1.21.0",
     "redis": "^2.6.2",
     "web3": "^0.17.0-alpha"
