@@ -2,6 +2,7 @@ const config = require('config')
 const bluebird = require('bluebird')
 const redis = bluebird.promisifyAll(require("redis")).createClient(config.dbConfig)
 const Web3 = require('web3')
+const Pool = require('./lib/pool')
 const Node = require('./lib/node')
 
 // initialize redis connection
@@ -17,7 +18,21 @@ let web3 = new Web3()
 web3.setProvider(new web3.providers.HttpProvider(config.web3Config))
 
 // bootstrap node
-let node = new Node(Object.assign({redis: redis, web3: web3}, config))
+let options = {redis: redis, web3: web3}
+
+let yesPool = new Pool(Object.assign({
+  address: config.yesContractAddress,
+  type: 'yes'
+}, options))
+
+let noPool = new Pool(Object.assign({
+  address: config.noContractAddress,
+  type: 'no'
+}, options))
+
+let node = new Node(Object.assign({
+  yesPool: yesPool, noPool: noPool
+}, options, config))
 
 // Graceful shotdown application
 let gracefulShutdown = function() {
