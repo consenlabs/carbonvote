@@ -4,7 +4,7 @@
   "description": "CarbonVote is a voting tool for Ethereum community.",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
