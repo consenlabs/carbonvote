@@ -1,1 +1,5 @@
-### CarbonVote
+# CarbonVote
+
+## Requirements
+* node
+* redis

@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/consenlabs/carbonvote/issues"
   },
-  "homepage": "https://github.com/consenlabs/carbonvote#readme"
+  "homepage": "https://github.com/consenlabs/carbonvote#readme",
+  "dependencies": {
+    "config": "^1.21.0",
+    "redis": "^2.6.2"
+  }
 }
