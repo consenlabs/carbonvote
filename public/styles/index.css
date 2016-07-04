@@ -45,6 +45,12 @@
   color: rgba(255,99,132,1);
 }
 
+.address .yes strong,
+.address .no strong {
+  width: 75px;
+  display: inline-block;
+}
+
 .address code {
   border-radius: 2px;
   border: 1px solid #e0e0e0;
@@ -52,7 +58,7 @@
   margin: 0 .2em;
   color: #e57373;
   background-color: #fff;
-  font-size: .8rem;
+  font-size: 16px;
   vertical-align: 1px;
   white-space: pre-wrap;
 }
@@ -105,6 +111,13 @@
   color: rgb(52, 152, 219);
 }
 
+.view-more {
+  display: flex;
+  justify-content: space-around;
+  width: 1024px;
+  margin: 0 auto;
+}
+
 .rhythm {
   width: 680px;
   margin: 4em auto;
@@ -112,6 +125,7 @@
 
 .rhythm .title {
   text-align: center;
+  font-weight: normal;
 }
 
 .rhythm li {

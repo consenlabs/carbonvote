@@ -59,8 +59,6 @@
         <li><a class="hash" target="_blank" href="http://etherscan.io/tx/<%= tx %>"><%= tx %></a></li>
         <% }); %>
       </ol>
-
-      <a class="transactions-more" target="_blank" href="http://etherscan.io/address/<%= yesContractAddress %>">View More</a>
     </nav>
 
     <nav class="no">
@@ -69,12 +67,18 @@
         <li><a class="hash" target="_blank" href="http://etherscan.io/tx/<%= tx %>"><%= tx %></a></li>
         <% }); %>
       </ol>
-
-      <a class="transactions-more" target="_blank" href="http://etherscan.io/address/<%= noContractAddress %>">View More</a>
     </nav>
   </section>
 
+  <div class="view-more">
+    <% if (yesTx.length) { %>
+    <a class="transactions-more" target="_blank" href="http://etherscan.io/address/<%= yesContractAddress %>">View More</a>
+    <% } %>
 
+    <% if (noTx.length) { %>
+    <a class="transactions-more" target="_blank" href="http://etherscan.io/address/<%= noContractAddress %>">View More</a>
+    <% } %>
+  </div>
 
   <article class="rhythm" id="">
     <h2 class="title">Time to Show Hands</h2>
