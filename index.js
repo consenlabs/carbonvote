@@ -80,8 +80,8 @@ app.get('/', function(req, res) {
     voteYesTxList,
     voteNoTxList
   ], function(error, results) {
-    data.yesVote = results[0]
-    data.noVote  = results[1]
+    data.yesVote = Math.abs(results[0])
+    data.noVote  = Math.abs(results[1])
     data.yesTx   = results[2]
     data.noTx    = results[3]
     res.render('index', data);
@@ -93,8 +93,8 @@ app.get('/vote', function(req, res) {
     voteYesAmount,
     voteNoAmount
   ], function(error, results) {
-    let yesVote = results[0]
-    let noVote  = results[1]
+    let yesVote = Math.abs(results[0])
+    let noVote  = Math.abs(results[1])
     res.send(JSON.stringify({yes: yesVote, no: noVote}))
   })
 })
