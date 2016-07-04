@@ -43,6 +43,30 @@ app.set('view engine', 'ejs')
 app.disable('view cache')
 app.use(express.static('public'))
 
+let voteYesAmount = function(callback) {
+  redis.get('vote-yes-amount', function(err, res) {
+    callback(null, res)
+  })
+}
+
+let voteNoAmount = function(callback) {
+  redis.get('vote-no-amount', function(err, res) {
+    callback(err, res)
+  })
+}
+
+let voteYesTxList = function(callback) {
+  redis.lrange('vote-yes-tx-list', 0, 20, function(err, res) {
+    callback(err, res)
+  })
+}
+
+let voteNoTxList = function(callback) {
+  redis.lrange('vote-no-tx-list', 0, 20, function(err, res) {
+    callback(err, res)
+  })
+}
+
 app.get('/', function(req, res) {
   let data = {
     yesContractAddress: config.yesContractAddress,
@@ -51,26 +75,10 @@ app.get('/', function(req, res) {
     noTx: ['tx1', 'tx2', 'tx3']
   }
   async.parallel([
-    function(callback) {
-      redis.get('vote-yes-amount', function(err, res) {
-        callback(null, res)
-      })
-    },
-    function(callback) {
-      redis.get('vote-no-amount', function(err, res) {
-        callback(err, res)
-      })
-    },
-    function(callback) {
-      redis.lrange('vote-yes-tx-list', 0, 20, function(err, res) {
-        callback(err, res)
-      })
-    },
-    function(callback) {
-      redis.lrange('vote-no-tx-list', 0, 20, function(err, res) {
-        callback(err, res)
-      })
-    }
+    voteYesAmount,
+    voteNoAmount,
+    voteYesTxList,
+    voteNoTxList
   ], function(error, results) {
     data.yesVote = results[0]
     data.noVote  = results[1]
@@ -79,6 +87,17 @@ app.get('/', function(req, res) {
     res.render('index', data);
   })
 });
+
+app.get('/vote', function(req, res) {
+  async.parallel([
+    voteYesAmount,
+    voteNoAmount
+  ], function(error, results) {
+    let yesVote = results[0]
+    let noVote  = results[1]
+    res.send(JSON.stringify({yes: yesVote, no: noVote}))
+  })
+})
 
 app.listen(8080);
 
