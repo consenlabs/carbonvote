@@ -4,6 +4,7 @@ const redis = bluebird.promisifyAll(require("redis")).createClient(config.dbConf
 const Web3 = require('web3')
 const Pool = require('./lib/pool')
 const Node = require('./lib/node')
+const express = require('express');
 
 // initialize redis connection
 redis.on("connect", function() {
@@ -33,6 +34,26 @@ let noPool = new Pool(Object.assign({
 let node = new Node(Object.assign({
   yesPool: yesPool, noPool: noPool
 }, options, config))
+
+
+// bootstrap web server
+let app = express()
+app.set('view engine', 'ejs')
+app.disable('view cache')
+
+app.get('/', function(req, res) {
+  let data = {
+    yesVote: 100,
+    noVote: 100,
+    yesContractAddress: config.yesContractAddress,
+    noContractAddress: config.noContractAddress,
+    yesTx: ['tx1', 'tx2', 'tx3'],
+    noTx: ['tx1', 'tx2', 'tx3']
+  }
+  res.render('index', data);
+});
+
+app.listen(8080);
 
 // Graceful shotdown application
 let gracefulShutdown = function() {
