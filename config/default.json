@@ -1,7 +1,7 @@
 {
   "dbConfig": "redis://localhost:6379/1",
   "web3Config": "http://localhost:8545",
-  "startBlockNumber": "1245720",
+  "startBlockNumber": "1249280",
   "yesContractAddress": "0xb891546333c9320f73e7ae5c17d19a6a3ae9d872",
   "noContractAddress": "0x8f25312592fe541f303b3e9fb3ae5d4985f0bf49"
 }
