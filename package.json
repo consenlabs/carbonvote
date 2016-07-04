@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/consenlabs/carbonvote#readme",
   "dependencies": {
+    "async": "^2.0.0-rc.6",
     "bluebird": "^3.4.1",
     "config": "^1.21.0",
     "ejs": "^2.4.2",

@@ -31,19 +31,19 @@
     </p>
 
     <div class="address">
-      <p class="yes"><strong>YES:</strong> <code>0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</code></p>
-      <p class="no"><strong>NO:</strong> <code>0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</code></p>
+      <p class="yes"><strong>Vote YES:</strong> <a class="" target="_blank" href="http://etherscan.io/address/<%= yesContractAddress %>"><code><%= yesContractAddress %></code></a></p>
+      <p class="no"><strong>Vote NO:</strong> <a class="" target="_blank" href="http://etherscan.io/address/<%= noContractAddress %>"><code><%= noContractAddress %></code></a></p>
     </div>
 
     <div class="status">
       <div class="item">
         <h2 class="caption yes">YES</h2>
-        <p class="amount">amount: 32132133</p>
+        <p class="amount">Ether: <%= yesVote %></p>
       </div>
 
       <div class="item">
         <h2 class="caption no">No</h2>
-        <p class="amount">amount: 32132133</p>
+        <p class="amount">Ether: <%= noVote %></p>
       </div>
     </div>
   </header>
@@ -55,40 +55,22 @@
   <section class="transactions">
     <nav class="yes">
       <ol>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <% yesTx.forEach(function(tx) { %>
+        <li><a class="hash" target="_blank" href="http://etherscan.io/tx/<%= tx %>"><%= tx %></a></li>
+        <% }); %>
       </ol>
 
-      <a class="transactions-more" href="">View More</a>
+      <a class="transactions-more" target="_blank" href="http://etherscan.io/address/<%= yesContractAddress %>">View More</a>
     </nav>
 
     <nav class="no">
       <ol>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
-        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <% noTx.forEach(function(tx) { %>
+        <li><a class="hash" target="_blank" href="http://etherscan.io/tx/<%= tx %>"><%= tx %></a></li>
+        <% }); %>
       </ol>
 
-      <a class="transactions-more" href="">View More</a>
+      <a class="transactions-more" target="_blank" href="http://etherscan.io/address/<%= noContractAddress %>">View More</a>
     </nav>
   </section>
 

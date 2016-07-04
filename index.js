@@ -1,5 +1,6 @@
 const config = require('config')
 const bluebird = require('bluebird')
+const async = require('async')
 const redis = bluebird.promisifyAll(require("redis")).createClient(config.dbConfig)
 const Web3 = require('web3')
 const Pool = require('./lib/pool')
@@ -44,14 +45,39 @@ app.use(express.static('public'))
 
 app.get('/', function(req, res) {
   let data = {
-    yesVote: 100,
-    noVote: 100,
     yesContractAddress: config.yesContractAddress,
     noContractAddress: config.noContractAddress,
     yesTx: ['tx1', 'tx2', 'tx3'],
     noTx: ['tx1', 'tx2', 'tx3']
   }
-  res.render('index', data);
+  async.parallel([
+    function(callback) {
+      redis.get('vote-yes-amount', function(err, res) {
+        callback(null, res)
+      })
+    },
+    function(callback) {
+      redis.get('vote-no-amount', function(err, res) {
+        callback(err, res)
+      })
+    },
+    function(callback) {
+      redis.lrange('vote-yes-tx-list', 0, 20, function(err, res) {
+        callback(err, res)
+      })
+    },
+    function(callback) {
+      redis.lrange('vote-no-tx-list', 0, 20, function(err, res) {
+        callback(err, res)
+      })
+    }
+  ], function(error, results) {
+    data.yesVote = results[0]
+    data.noVote  = results[1]
+    data.yesTx   = results[2]
+    data.noTx    = results[3]
+    res.render('index', data);
+  })
 });
 
 app.listen(8080);
