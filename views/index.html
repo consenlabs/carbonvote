@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbonvote</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#2F3BA2">
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="../public/styles/reset.css">
+  <link rel="stylesheet" href="../public/styles/rhythm.css">
+  <link rel="stylesheet" href="../public/styles/index.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="title">Carbonvote</h1>
+    <p class="description">
+      It has been a very rough month for everyone, and we mean everyone, who’s involved in the blockchain community because of what happened on ethereum, with The DAO.
+    </p>
+
+    <div class="address">
+      <p class="yes"><strong>YES:</strong> <code>0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</code></p>
+      <p class="no"><strong>NO:</strong> <code>0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</code></p>
+    </div>
+
+    <div class="status">
+      <div class="item">
+        <h2 class="caption yes">YES</h2>
+        <p class="amount">amount: 32132133</p>
+      </div>
+
+      <div class="item">
+        <h2 class="caption no">No</h2>
+        <p class="amount">amount: 32132133</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="CarbonvoteChart-wrapper">
+    <div id="CarbonvoteChart"></div>
+  </div>
+
+  <section class="transactions">
+    <nav class="yes">
+      <ol>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+      </ol>
+
+      <a class="transactions-more" href="">View More</a>
+    </nav>
+
+    <nav class="no">
+      <ol>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+        <li><a class="hash" href="">0X58446C5D085CD2502CE02DF92853F3D0A346F0636B495011E01BA6A6FEB656FE</a></li>
+      </ol>
+
+      <a class="transactions-more" href="">View More</a>
+    </nav>
+  </section>
+
+
+
+  <article class="rhythm" id="">
+    <h2 class="title">Time to Show Hands</h2>
+
+    <p>Hi Ethereum Community, and by extension, the Blockchain community</p>
+
+    <p>It has been a very rough month for everyone, and we mean everyone, who’s involved in the blockchain community because of what happened on ethereum, with The DAO.</p>
+
+    <p>
+      Every new technology goes through major setbacks, until it becomes a standard. This is not the first and it won’t be the last for some to question and for us to polish the security and of ethereum, blockchain, and smart contracts we write and use on the platform. The discussions, segregated on all sorts of platforms because of the new media and in different regions because of geography, on facts about what really happened, the causes and consequences, polices about what to do next and how to achieve the goal, and most importantly, the values everyone in the community holds are important for the technology, the community and the world (if we are ever allowed to be so ambitious) to improve to what’s the most ideal.
+    </p>
+
+    <p>
+      What is the most ideal? We agreed on a clear direction but a vague vision. This has always been meaning to be a long process, but when there are events that push us to make a decision, we need to come up with solutions, imperfect and tentative policies, and to achieve that, we need to bring together the communties, the real stake holders who have a say and who should have a say, to decide for this issue and for issues that will come about in the future.
+    </p>
+
+    <p>
+      We as a group of people who have been (relatively) long in this young industry, who have passions (almost love) for the technology, have very different opinions on what actions ethereum and the community should take for this hacking in this crisis, but we quickly gathered together and want to offer our contribution, a practical solution, a workable solution. Clock is ticking. We are not saying it’s perfect, but it’s among many of the ways, the optimal way, in our opinion, to reflect the opinions. So it will be an important source of reference when there are actions to be taken. We welcome the community to challenge and help us to improve.
+    </p>
+
+    <p>
+      And here is what we want to put forward: <a href="">Carbonvote.com</a>
+    </p>
+
+    <strong>
+      Specifically on: A hard fork or no action?
+    </strong>
+
+    <ol>
+      <li>
+        <strong>Who should vote?</strong>
+        <p>Right now, the people who get to decide are miners. We put forward that it’s at this point, the legitimate voters should be players who have ethers in their wallets.</p>
+      </li>
+
+      <li>
+        <strong>So we are going to count heads?</strong>
+        <p>No. We are going to count coins, in this case, ethers. How many ethers you have, how many votes you have.</p>
+        <p>Ethereum will turn into a POS blockchain in its plan. And we as participants have agreed to this plan when we start to hold ethers. The result of this polling will be depended on what most ethers go, fork or nothing, or default. </p>
+      </li>
+
+      <li>
+        <strong>How to vote?</strong>
+        <p>
+          Simply, send a message from your wallet.
+        </p>
+        <p>
+          We won’t collect or lock money. After what happened, who is brave enough to send any money to any smart contract at the moment?
+        </p>
+        <p>
+          Carbonvote.com will dynamically calculate how many ethers go to which bench, until the due time due date. So you can change your mind, you can overwrite your vote by resending your message as long as it’s before this smart contract finishes the final round of counting and announces the result.
+        </p>
+      </li>
+    </ol>
+
+    <strong>
+      F&Q
+    </strong>
+
+    <p>
+      We call for everyone who has the least care for ethereum to vote on the CarbonVote platform. The more people involved, the more reflective this vote will be.
+    </p>
+
+    <p>
+      At this point, it’s important we bring all the communities that are only loosely connected together to voice. No matter where we go, no matter what you believe, what needs to be said needs to be heard.
+    </p>
+  </article>
+
+  <footer>
+    <p class="contribute">contribute by</p>
+    <nav>
+      <a href="http://ethfans.org/">Ethfans</a>
+      <a href="#">ConsenLabs</a>
+      <a href="#">StoneLedger</a>
+      <a href="http://cryptape.com/">Cryptape</a>
+    </nav>
+  </footer>
+
+  <script src="../public/javscripts/highcharts.js" charset="utf-8"></script>
+  <script src="../public/javscripts/index.js" charset="utf-8"></script>
+</body>
+</html>

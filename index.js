@@ -40,6 +40,7 @@ let node = new Node(Object.assign({
 let app = express()
 app.set('view engine', 'ejs')
 app.disable('view cache')
+app.use(express.static('public'))
 
 app.get('/', function(req, res) {
   let data = {
@@ -78,4 +79,3 @@ process.on('message', function(msg) {
     gracefulShutdown()
   }
 })
-
