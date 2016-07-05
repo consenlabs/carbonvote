@@ -1,4 +1,8 @@
 
+.rhythm h1, .rhythm h2, .rhythm h3, .rhythm h4, .rhythm h5, .rhythm h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Rhythm Heiti", sans-serif;
+}
+
 .header {
   width: 1024px;
   padding: 3em 0;
@@ -11,9 +15,13 @@
 }
 
 .header .description {
-  color: #999;
   width: 680px;
-  margin: 1em auto;
+  margin: 1em auto 2em;
+  text-align: left;
+  border: 1px solid #ececec;
+  padding: 1em;
+  background-color: #f9f9f9;
+  color: #6f6f6f;
 }
 
 .header .status {
@@ -118,14 +126,15 @@
   margin: 0 auto;
 }
 
-.rhythm {
-  width: 680px;
+article.rhythm {
+  width: 740px;
   margin: 4em auto;
 }
 
 .rhythm .title {
   text-align: center;
   font-weight: normal;
+  margin-top: 0;
 }
 
 .rhythm li {

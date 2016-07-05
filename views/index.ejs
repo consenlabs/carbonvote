@@ -25,16 +25,19 @@
 
 <body>
   <header class="header">
-    <h1 class="title">Vote: The DAO Hard Fork</h1>
+    <div class="rhythm">
+      <h1 class="title">Vote: The DAO Hard Fork</h1>
 
-    <h4>How to vote?</h4>
-    <strong>Make a 0-ETH transaction to the YES or NO address to vote respectively.</strong>
+      <h2>How to vote?</h2>
+      <strong>Make a 0-ETH transaction to the YES or NO address to vote respectively.</strong>
 
-    <ul>
-      <li>All the ETH under the from-address will be counted as corresponding ballots.</li>
-      <li>If your wallet (for instance, Mist) does not support 0-ETH transactions, a minimal amount (e.g. 0.0001 ETH) is recommended. The smart contract will send back any amount of ETH it receives automatically.</li>
-      <li>The status is an on-going real-time counting.</li>
-    </ul>
+      <div class="description">
+        <p>All the ETH under the from-address will be counted as corresponding ballots.</p>
+        <p>If your wallet (for instance, Mist) does not support 0-ETH transactions, a minimal amount (e.g. 0.0001 ETH) is recommended. The smart contract will send back any amount of ETH it receives automatically.</p>
+        <p>The status is an on-going real-time counting.</p>
+      </div>
+
+    </div>
 
     <div class="address">
       <p class="yes"><strong>Vote YES:</strong> <a class="" target="_blank" href="http://etherscan.io/address/<%= yesContractAddress %>"><code><%= yesContractAddress %></code></a></p>
@@ -87,24 +90,20 @@
   </div>
 
   <article class="rhythm" id="">
-    <h2>Further explanation: mechanism of the Carbonvote System</h2>
-    <p><strong>1. Voters: </strong>ETH holders.</p>
-    <p><strong>2. Ballots: </strong>ETH. How many ETH, how many votes.</p>
-    <p><strong>3. How to Vote: </strong>Send ETH to the YES address to propose or NO address to oppose. And you still have time to change your mind.</p>
+    <h3 class="title">Further explanation: mechanism of the Carbonvote System</h3>
 
-    <ul>
-      <li>If the YES address receives any ETH from an address, then all the ETH under this address will be considered as a batch of votes that goes to YES.</li>
-      <li>If later this address makes a transaction to the NO address, then the entire batch of votes will be recounted as NO.</li>
-      <li>If voters who after voting, decide to abstain from this vote, they can move the ETH to an address that has yet participated in this vote.</li>
-    </ul>
+    <p><strong>1.Voters: </strong>ETH holders.</p>
+    <p><strong>2.Ballots: </strong>ETH. How many ETH, how many votes.</p>
+    <p><strong>3.How to Vote: </strong>Send ETH to the YES address to propose or NO address to oppose. And you still have time to change your mind.</p>
+
+    <p>If the YES address receives any ETH from an address, then all the ETH under this address will be considered as a batch of votes that goes to YES.</p>
+    <p>If later this address makes a transaction to the NO address, then the entire batch of votes will be recounted as NO.</p>
+    <p>If voters who after voting, decide to abstain from this vote, they can move the ETH to an address that has yet participated in this vote.</p>
 
     <p><strong>4. Ballot counting: </strong>Dynamic real-time counting of the ETH under the wallet addresses that have voted.</p>
     <p><strong>5. Fund Security: </strong>No ETH are collected or locked.</p>
 
-    <ul>
-      <li>Because the vote status is not counting how many ETH are sent to the YES or NO addresses, but the real-time amount of ETH under the addresses that have participated in the vote, voters are recommended to send 0 to a minimal amount of ETH for sending the message of their choice (depending on what wallets are used, Mist, for example does not allow zero-ETH transactions). If by any chance, the smart contract receives money from voters, ETH will be refunded to the original addresses upon reception.</li>
-    </ul>
-
+    <p>Because the vote status is not counting how many ETH are sent to the YES or NO addresses, but the real-time amount of ETH under the addresses that have participated in the vote, voters are recommended to send 0 to a minimal amount of ETH for sending the message of their choice (depending on what wallets are used, Mist, for example does not allow zero-ETH transactions). If by any chance, the smart contract receives money from voters, ETH will be refunded to the original addresses upon reception.</p>
   </article>
 
   <footer>
