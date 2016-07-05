@@ -37,7 +37,7 @@ function createChart(yes, no) {
         y: no
       }]
     }],
-    colors: ['#36a2eb', '#ff6384'],
+    colors: ['green', 'red'],
   })
 }
 

@@ -45,12 +45,12 @@
 
 .address .yes strong,
 .status .caption.yes {
-  color: rgba(54, 162, 235, 1);
+  color: green;
 }
 
 .address .no strong,
 .status .caption.no {
-  color: rgba(255,99,132,1);
+  color: red;
 }
 
 .address .yes strong,
