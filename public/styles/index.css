@@ -55,8 +55,9 @@
 
 .address .yes strong,
 .address .no strong {
-  width: 75px;
+  width: 100px;
   display: inline-block;
+  font-size: 15px;
 }
 
 .address code {
@@ -156,4 +157,56 @@ footer .contribute {
 footer nav a {
   margin: 0 1em;
   color: #999;
+}
+
+@media (max-width: 640px) {
+  .transactions,
+  .view-more,
+  .CarbonvoteChart-wrapper {
+    display: none;
+  }
+
+  article.rhythm,
+  .header,
+  .header .description  {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  article.rhythm {
+    margin-top: 0;
+  }
+
+  .address .yes strong,
+  .address .no strong  {
+    margin-bottom: .5em;
+  }
+
+  .address {
+    overflow: auto;
+    width: 100%;
+  }
+
+  .header .title {
+    font-size: 28px;
+  }
+
+  .header .status {
+    flex-direction: column;
+  }
+
+  .header .status .item {
+    margin: 1em auto;
+  }
+
+  footer .contribute {
+    font-size: 14px;
+  }
+
+  footer nav {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+  }
 }
