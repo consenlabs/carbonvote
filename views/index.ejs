@@ -25,10 +25,16 @@
 
 <body>
   <header class="header">
-    <h1 class="title">Carbonvote</h1>
-    <p class="description">
-      It has been a very rough month for everyone, and we mean everyone, who’s involved in the blockchain community because of what happened on ethereum, with The DAO.
-    </p>
+    <h1 class="title">Vote: The DAO Hard Fork</h1>
+
+    <h4>How to vote?</h4>
+    <strong>Make a 0-ETH transaction to the YES or NO address to vote respectively.</strong>
+
+    <ul>
+      <li>All the ETH under the from-address will be counted as corresponding ballots.</li>
+      <li>If your wallet (for instance, Mist) does not support 0-ETH transactions, a minimal amount (e.g. 0.0001 ETH) is recommended. The smart contract will send back any amount of ETH it receives automatically.</li>
+      <li>The status is an on-going real-time counting.</li>
+    </ul>
 
     <div class="address">
       <p class="yes"><strong>Vote YES:</strong> <a class="" target="_blank" href="http://etherscan.io/address/<%= yesContractAddress %>"><code><%= yesContractAddress %></code></a></p>
@@ -81,18 +87,7 @@
   </div>
 
   <article class="rhythm" id="">
-    <h2 class="title">Vote: The DAO Hard Fork</h2>
-
-    <h4>How to vote?</h4>
-    <strong>Make a 0-ETH transaction to the YES or NO address to vote respectively.</strong>
-
-    <ul>
-      <li>All the ETH under the from-address will be counted as corresponding ballots.</li>
-      <li>If your wallet (for instance, Mist) does not support 0-ETH transactions, a minimal amount (e.g. 0.0001 ETH) is recommended. The smart contract will send back any amount of ETH it receives automatically.</li>
-      <li>The status is an on-going real-time counting.</li>
-    </ul>
-
-    <h4>Further explanation: mechanism of the Carbonvote System</h4>
+    <h2>Further explanation: mechanism of the Carbonvote System</h2>
     <p><strong>1. Voters: </strong>ETH holders.</p>
     <p><strong>2. Ballots: </strong>ETH. How many ETH, how many votes.</p>
     <p><strong>3. How to Vote: </strong>Send ETH to the YES address to propose or NO address to oppose. And you still have time to change your mind.</p>
@@ -113,7 +108,7 @@
   </article>
 
   <footer>
-    <p class="contribute">contribute by</p>
+    <p class="contribute">contributed by</p>
     <nav>
       <a href="http://ethfans.org/">Ethfans</a>
       <a href="#">ConsenLabs</a>
