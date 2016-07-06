@@ -1,5 +1,5 @@
 contract Vote {
-    event LogVote(address addr);
+    event LogVote(address indexed addr);
 
     function() {
         LogVote(msg.sender);
