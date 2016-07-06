@@ -1,19 +1,11 @@
 contract Vote {
-    address creator;
-
-    function Vote() {
-        creator = msg.sender;
-    }
+    event LogVote(address addr);
 
     function() {
-        if (msg.value > 0) {
-            tx.origin.send(msg.value);
-        }
-    }
+        LogVote(msg.sender);
 
-    function kill() {
-        if (msg.sender == creator) {
-            suicide(creator);
+        if (msg.value > 0) {
+            msg.sender.send(msg.value);
         }
     }
 }

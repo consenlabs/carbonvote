@@ -1,7 +1,6 @@
 const config = require('config')
-const bluebird = require('bluebird')
 const async = require('async')
-const redis = bluebird.promisifyAll(require("redis")).createClient(config.dbConfig)
+const redis = require("redis").createClient(config.dbConfig)
 const Web3 = require('web3')
 const Pool = require('./lib/pool')
 const Node = require('./lib/node')
@@ -111,6 +110,7 @@ let gracefulShutdown = function() {
   console.log('Received kill signal, shutting down gracefully.')
 
   node.stop()
+  redis.quit()
 
   setTimeout(function(){
     process.exit(0)
