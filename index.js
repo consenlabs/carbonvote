@@ -71,6 +71,12 @@ let voteNoTxList = function(callback) {
   })
 }
 
+let lastBlock = function(callback) {
+  redis.get('processedBlockNumber', function(err, res) {
+    callback(err, res)
+  })
+}
+
 app.get('/', function(req, res) {
   let data = {
     yesContractAddress: config.yesContractAddress,
@@ -82,12 +88,14 @@ app.get('/', function(req, res) {
     voteYesAmount,
     voteNoAmount,
     voteYesTxList,
-    voteNoTxList
+    voteNoTxList,
+    lastBlock
   ], function(error, results) {
-    data.yesVote = results[0] < 0 ? 0 : results[0]
-    data.noVote  = results[1] < 0 ? 0 : results[1]
-    data.yesTx   = results[2]
-    data.noTx    = results[3]
+    data.yesVote   = results[0] < 0 ? 0 : results[0]
+    data.noVote    = results[1] < 0 ? 0 : results[1]
+    data.yesTx     = results[2]
+    data.noTx      = results[3]
+    data.lastBlock = results[4]
     res.render('index', data);
   })
 });
