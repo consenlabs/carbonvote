@@ -36,3 +36,15 @@ address: 0x58dd96aa829353032a21c95733ce484b949b2849 block: 1836217
 ```
 POLL=true node index.js
 ```
+
+## Q&A
+
+Q: How to make a 0-ETH transactions with geth?
+
+```
+geth console
+> personal.listAccounts
+["your_address", ...]
+> personal.unlockAccount('your_address')
+> eth.sendTransaction({from: 'your_address', to: 'yes_or_no_address', value: 0})
+```
