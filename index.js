@@ -1,3 +1,4 @@
+'use strict';
 const config = require('config')
 const async = require('async')
 const redis = require("redis").createClient(config.dbConfig)
