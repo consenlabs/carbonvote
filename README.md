@@ -1,9 +1,9 @@
 # CarbonVote
 
 ## Requirements
-* node
-* redis
-* geth
+* NodeJS 6.2+
+* Redis
+* geth with rpc support
 
 
 ```
