@@ -3,6 +3,7 @@
 ## Requirements
 * node
 * redis
+* geth
 
 
 ```
