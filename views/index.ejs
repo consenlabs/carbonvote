@@ -42,7 +42,9 @@
 
     <div class="address">
       <p class="yes"><strong>Vote YES:</strong> <a class="" target="_blank" href="http://etherscan.io/address/<%= yesContractAddress %>"><code><%= yesContractAddress %></code></a></p>
+      <p><code>web3.eth.sendTransaction({ to: '<%= yesContractAddress %>', gas: 41000, from:web3.eth.accounts[0] })</code></p>
       <p class="no"><strong>Vote NO:</strong> <a class="" target="_blank" href="http://etherscan.io/address/<%= noContractAddress %>"><code><%= noContractAddress %></code></a></p>
+      <p><code>web3.eth.sendTransaction({ to: '<%= noContractAddress %>', gas: 41000, from:web3.eth.accounts[0] })</code></p>
     </div>
 
     <div class="status">
