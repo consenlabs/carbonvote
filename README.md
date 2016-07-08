@@ -35,7 +35,7 @@ address: 0x58dd96aa829353032a21c95733ce484b949b2849 block: 1836217
 ## Start server
 
 ```
-POLL=true node index.js
+POLL=true WEB=true node index.js
 ```
 
 ## Q&A
