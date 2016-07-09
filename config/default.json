@@ -5,5 +5,5 @@
   "startBlockNumber": "1836214",
   "yesContractAddress": "0x3039d0a94d51c67a4f35e742b571874e53467804",
   "noContractAddress": "0x58dd96aa829353032a21c95733ce484b949b2849",
-  "blackList": ["0xd94c9ff168dc6aebf9b6cc86deff54f3fb0afc33", "0x2910543af39aba0cd09dbb2d50200b3e800a63d2", "0x32be343b94f860124dc4fee278fdcbd38c102d88", "0xcafb10ee663f465f9d10588ac44ed20ed608c11e"]
+  "blackList": ["0xd94c9ff168dc6aebf9b6cc86deff54f3fb0afc33", "0x2910543af39aba0cd09dbb2d50200b3e800a63d2", "0x32be343b94f860124dc4fee278fdcbd38c102d88", "0xcafb10ee663f465f9d10588ac44ed20ed608c11e", "0x91337a300e0361bddb2e377dd4e88ccb7796663d"]
 }
