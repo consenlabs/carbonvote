@@ -7,11 +7,6 @@ const Web    = require(__dirname + '/lib/web')
 // initialize redis connection
 redis.on("connect", function() {
   console.log("Redis connected.")
-
-  // populate black list
-  config.blackList.forEach(function(address) {
-    redis.sadd('vote-account-blacklist', address)
-  })
 })
 redis.on("error", function(err) {
   console.log("Redis Error ", err)
