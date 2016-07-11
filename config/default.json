@@ -11,6 +11,10 @@
     "Poloniex": "0x32be343b94f860124dc4fee278fdcbd38c102d88",
     "Bitfinex": "0xcafb10ee663f465f9d10588ac44ed20ed608c11e",
     "BTC-e": "0x91337a300e0361bddb2e377dd4e88ccb7796663d",
-    "BitcoinToYou": "0xf4fe90e63f2a90710bcc0c00f38812c4a882f2ff"
+    "BitcoinToYou": "0xf4fe90e63f2a90710bcc0c00f38812c4a882f2ff",
+    "Shapeshift1": "0x120a270bbc009644e35f0bb6ab13f95b8199c4ad",
+    "Shapeshift2": "0x9e6316f44baeeee5d41a1070516cc5fa47baf227",
+    "f2pool": "0x61c808d82a3ac53231750dadc13c777b59310bd9",
+    "DwarfPool1": "0x2a65aca4d5fc5b5c859090a6c34d164135398226"
   }
 }
